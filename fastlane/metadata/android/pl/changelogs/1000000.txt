@@ -1,0 +1,1 @@
+TODO: max 500 znaków. Nazwa pliku musi odpowiadać versionCode (tag v1.0.0 -> 1000000).

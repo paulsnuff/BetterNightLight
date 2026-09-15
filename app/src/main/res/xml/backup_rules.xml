@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Backup rules for Android 10 (API 29) and older.
+   Ensures app preferences and settings are preserved in cloud backup.
+-->
+<full-backup-content>
+    <!-- Include DataStore and SharedPreferences settings -->
+    <include
+        domain="file"
+        path="datastore" />
+    <include
+        domain="sharedpref"
+        path="." />
+</full-backup-content>

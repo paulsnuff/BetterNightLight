@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Better Night Light</string>
+
+    <!-- Navigation Labels -->
+    <string name="nav_home">Główna</string>
+    <string name="nav_settings">Ustawienia</string>
+    <string name="nav_about">O aplikacji</string>
+
+    <!-- O aplikacji -->
+    <string name="about_source_code">Kod źródłowy na GitHubie</string>
+    <string name="about_libraries">Biblioteki open-source</string>
+    <string name="about_libraries_title">Biblioteki</string>
+    <string name="about_close">Zamknij</string>
+
+    <!-- Ekran Główny: Kafelki statusu -->
+    <string name="home_title">Stan systemu</string>
+    <string name="home_night_light_support_title">Obsługa Podświetlenia Nocnego</string>
+    <string name="home_night_light_supported">Wspierane</string>
+    <string name="home_night_light_not_supported">Brak wsparcia</string>
+    <string name="home_night_light_supported_desc">Twoje urządzenie obsługuje Podświetlenie Nocne.</string>
+    <string name="home_night_light_not_supported_desc">Twoje urządzenie nie obsługuje Podświetlenia Nocnego.</string>
+    <string name="home_permission_title">Uprawnienie do edycji Podświetlenia Nocnego</string>
+    <string name="home_permission_granted">Przyznane</string>
+    <string name="home_permission_denied">Brak uprawnienia</string>
+    <string name="home_permission_granted_desc">Aplikacja posiada uprawnienia do modyfikacji Podświetlenia Nocnego.</string>
+    <string name="home_permission_denied_desc">Wymagane nadanie uprawnienia WRITE_SECURE_SETTINGS, aby edytować Podświetlenie Nocne.</string>
+
+    <!-- Ekran Główny: Nawigacja kreatora -->
+    <string name="home_wizard_next">Dalej</string>
+
+    <!-- Ekran Główny: Automatyzacja -->
+    <string name="home_automation_enable_title">Automatyczne Podświetlenie Nocne</string>
+    <string name="home_automation_trigger_section">Harmonogram</string>
+    <string name="home_automation_schedule_summary_manual">%1$s – %2$s</string>
+    <string name="home_automation_schedule_expand">Rozwiń harmonogram</string>
+    <string name="home_automation_schedule_collapse">Zwiń harmonogram</string>
+    <string name="home_automation_trigger_manual_title">Harmonogram ręczny</string>
+    <string name="home_automation_manual_start">Godzina startu</string>
+    <string name="home_automation_manual_end">Godzina końca</string>
+    <string name="home_automation_trigger_location_title">Wschód i zachód słońca</string>
+    <string name="home_automation_use_device_location">Użyj lokalizacji urządzenia</string>
+    <string name="home_automation_enter_manually">Wpisz współrzędne ręcznie</string>
+    <string name="home_automation_current_coordinates">Aktualne współrzędne: %1$s, %2$s</string>
+    <string name="home_automation_location_unavailable">Nie udało się określić lokalizacji urządzenia. Wpisz współrzędne ręcznie.</string>
+    <string name="home_automation_location_permission_denied">Uprawnienie do lokalizacji jest wymagane, aby użyć lokalizacji urządzenia.</string>
+    <string name="home_automation_latitude">Szerokość geograficzna</string>
+    <string name="home_automation_longitude">Długość geograficzna</string>
+    <string name="home_automation_time_confirm">OK</string>
+    <string name="home_automation_sunrise">Wschód</string>
+    <string name="home_automation_sunset">Zachód</string>
+    <string name="home_automation_temperature_title">Siła Night Light</string>
+    <string name="home_automation_temperature_value">%1$d K</string>
+    <string name="home_automation_temperature_input">Kelwiny</string>
+
+    <!-- Ekran Główny: Automatyzacja - Fazy nocy -->
+    <string name="home_automation_phases_section">Fazy nocy</string>
+    <string name="home_automation_phases_expand">Rozwiń fazy nocy</string>
+    <string name="home_automation_phases_collapse">Zwiń fazy nocy</string>
+    <string name="home_automation_phase_base_title">Faza podstawowa</string>
+    <string name="home_automation_time_unavailable">--:--</string>
+
+    <string name="home_automation_phase_base_times_location">Zachód %1$s – Wschód %2$s</string>
+    <string name="home_automation_phase_base_badge">wg harmonogramu</string>
+    <string name="home_automation_phase_boost_title">Wzmocnienie</string>
+    <string name="home_automation_phase_boost_subtitle">Mocniejsze światło później w nocy</string>
+    <string name="home_automation_phase_boost_start">Godzina startu</string>
+    <string name="home_automation_phase_transition">Przejście</string>
+    <string name="home_automation_phase_transition_instant">Natychmiast</string>
+    <string name="home_automation_phase_transition_instant_desc">Skok do pełnej siły od razu</string>
+    <string name="home_automation_phase_transition_gradual">Stopniowo</string>
+    <string name="home_automation_phase_transition_gradual_desc">Liniowe przejście od podstawowej siły do wartości wzmocnienia w ciągu nocy</string>
+    <string name="home_automation_phase_off_title">Twarde wyłączenie</string>
+    <string name="home_automation_phase_off_subtitle">Zawsze wyłącza Night Light</string>
+    <string name="home_automation_phase_off_time">Godzina</string>
+    <string name="home_automation_phase_off_hint">Od tej godziny filtr pozostaje wyłączony, niezależnie od harmonogramu.</string>
+    <string name="home_automation_phase_legend_base">Podstawa</string>
+    <string name="home_automation_phase_legend_boost">Wzmocnienie</string>
+    <string name="home_automation_phase_legend_off">Wyłączone</string>
+    <string name="home_automation_phase_boost_summary_label">Wzmocnienie</string>
+    <string name="home_automation_phase_off_summary_label">Wyłączenie</string>
+    <string name="home_automation_current_strength">Aktualna siła: %1$d K</string>
+    <string name="home_automation_current_strength_off">Aktualnie wyłączone</string>
+
+    <!-- Ekran Główny: Sposoby nadania uprawnienia -->
+    <string name="home_permission_grant_panel_title">Nadaj uprawnienie</string>
+    <string name="home_permission_grant_panel_subtitle">Wybierz sposób nadania uprawnienia WRITE_SECURE_SETTINGS</string>
+    <string name="home_permission_method_adb_title">ADB - Konsola</string>
+    <string name="home_permission_method_adb_desc">Podłącz urządzenie do komputera, otwórz konsolę ADB i wklej tę komendę:</string>
+    <string name="home_permission_adb_command" translatable="false">adb shell pm grant %1$s android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="home_permission_method_shizuku_title">Shizuku i kompatybilne</string>
+    <string name="home_permission_method_shizuku_desc">Nadaj uprawnienie przez Shizuku lub kompatybilny serwis (Stellar, Nightzuku, Shizuku+). Wymagane jest uruchomienie jednego z nich. Aplikacja nie korzysta już z serwisu po nadaniu.</string>
+    <string name="home_permission_method_root_title">Root</string>
+    <string name="home_permission_method_root_desc">Nadaj uprawnienie przy użyciu praw roota. Aplikacja poprosi o uprawnienia superużytkownika.</string>
+    <string name="home_permission_request_button">Poproś o uprawnienie</string>
+    <string name="home_permission_copy">Kopiuj</string>
+    <string name="home_permission_copied">Komenda skopiowana do schowka</string>
+    <string name="home_permission_detected_harnesses">Wykryto: %1$s</string>
+    <string name="home_permission_shizuku_success">Uprawnienie nadane przez serwis.</string>
+    <string name="home_permission_shizuku_cancelled">Nie przyznano uprawnienia serwisu.</string>
+    <string name="home_permission_shizuku_not_installed">Nie znaleziono kompatybilnego serwisu. Zainstaluj Shizuku, Stellar, Nightzuku lub Shizuku+.</string>
+    <string name="home_permission_shizuku_not_running">Serwis nie działa. Uruchom Shizuku, Stellar, Nightzuku lub Shizuku+ najpierw.</string>
+    <string name="home_permission_shizuku_unsupported">Wersja serwisu jest zbyt stara. Zaktualizuj serwis.</string>
+    <string name="home_permission_shizuku_failed">Nie udało się nadać uprawnienia przez serwis.</string>
+    <string name="home_permission_root_detected">Wykryto dostęp root</string>
+    <string name="home_permission_root_not_detected">Brak wykrytego dostępu root</string>
+    <string name="home_permission_root_success">Uprawnienie nadane przez roota.</string>
+    <string name="home_permission_root_denied">Odmówiono uprawnień roota.</string>
+    <string name="home_permission_root_not_available">Nie znaleziono dostępu root na tym urządzeniu.</string>
+    <string name="home_permission_root_failed">Nie udało się nadać uprawnienia przez roota.</string>
+
+    <!-- Informacje o Podświetleniu Nocnym -->
+    <string name="home_night_light_available">Obsługa w systemie:</string>
+    <string name="home_night_light_status">Aktualny stan:</string>
+    <string name="home_night_light_value">Temperatura barwowa / Wartość:</string>
+    <string name="home_night_light_schedule">Tryb harmonogramu:</string>
+
+    <string name="status_yes">Tak (Dostępne)</string>
+    <string name="status_no">Nie (Brak wsparcia)</string>
+    <string name="status_enabled">Włączone (ON)</string>
+    <string name="status_disabled">Wyłączone (OFF)</string>
+    <string name="status_unknown">Nieznana / Domyślna</string>
+    <string name="status_not_active">Brak (Włącz, aby odczytać wartość)</string>
+    <string name="schedule_manual">Ręczny</string>
+    <string name="schedule_twilight">Od zachodu do wschodu słońca</string>
+    <string name="schedule_custom">Własny harmonogram</string>
+
+    <!-- Ekran Ustawień -->
+    <string name="settings_title">Ustawienia</string>
+    <string name="settings_section_customize">Personalizacja</string>
+    <string name="settings_language_title">Język</string>
+    <string name="settings_language_auto">Automatycznie (System)</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_pl">Polski</string>
+
+    <string name="settings_theme_title">Motyw</string>
+    <string name="settings_theme_system">Systemowy</string>
+    <string name="settings_theme_light">Jasny</string>
+    <string name="settings_theme_dark">Ciemny</string>
+
+    <string name="settings_material_you_title">Material You</string>
+    <string name="dialog_cancel">Anuluj</string>
+
+    <!-- Usługa pierwszego planu automatyzacji -->
+    <string name="notification_channel_name">Automatyzacja Night Light</string>
+    <string name="notification_title">Automatyczny Night Light aktywny</string>
+    <string name="notification_text">Dostosowuje Night Light zgodnie z harmonogramem.</string>
+</resources>

@@ -1,0 +1,1 @@
+TODO: max 4000 znaków, obowiązkowe. Dozwolone tagi HTML: b, big, blockquote, br, cite, em, i, li, ol, small, strike, strong, sub, sup, tt, u, ul.

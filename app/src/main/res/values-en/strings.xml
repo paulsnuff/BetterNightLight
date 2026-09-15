@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name">Better Night Light</string>
+
+    <!-- Navigation Labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about">About</string>
+
+    <!-- About Screen -->
+    <string name="about_source_code">Source code on GitHub</string>
+    <string name="about_libraries">Open-source libraries</string>
+    <string name="about_libraries_title">Libraries</string>
+    <string name="about_close">Close</string>
+
+    <!-- Home Screen Status Cards -->
+    <string name="home_title">Status Overview</string>
+    <string name="home_night_light_support_title">Night Light Support</string>
+    <string name="home_night_light_supported">Supported</string>
+    <string name="home_night_light_not_supported">Not Supported</string>
+    <string name="home_night_light_supported_desc">Your device supports Night Light.</string>
+    <string name="home_night_light_not_supported_desc">Your device does not support Night Light.</string>
+    <string name="home_permission_title">Night Light Edit Permission</string>
+    <string name="home_permission_granted">Granted</string>
+    <string name="home_permission_denied">Not Granted</string>
+    <string name="home_permission_granted_desc">The app has permission to edit Night Light settings.</string>
+    <string name="home_permission_denied_desc">Grant WRITE_SECURE_SETTINGS permission to edit Night Light.</string>
+
+    <!-- Home Screen: Wizard Navigation -->
+    <string name="home_wizard_next">Next</string>
+
+    <!-- Home Screen: Automation -->
+    <string name="home_automation_enable_title">Automatic Night Light</string>
+    <string name="home_automation_trigger_section">Schedule</string>
+    <string name="home_automation_schedule_summary_manual">%1$s – %2$s</string>
+    <string name="home_automation_schedule_expand">Expand schedule</string>
+    <string name="home_automation_schedule_collapse">Collapse schedule</string>
+    <string name="home_automation_trigger_manual_title">Manual schedule</string>
+    <string name="home_automation_manual_start">Start time</string>
+    <string name="home_automation_manual_end">End time</string>
+    <string name="home_automation_trigger_location_title">Sunrise &amp; sunset</string>
+    <string name="home_automation_use_device_location">Use device location</string>
+    <string name="home_automation_enter_manually">Enter coordinates manually</string>
+    <string name="home_automation_current_coordinates">Current coordinates: %1$s, %2$s</string>
+    <string name="home_automation_location_unavailable">Could not determine the device location. Enter the coordinates manually.</string>
+    <string name="home_automation_location_permission_denied">Location permission is needed to use the device location.</string>
+    <string name="home_automation_latitude">Latitude</string>
+    <string name="home_automation_longitude">Longitude</string>
+    <string name="home_automation_time_confirm">OK</string>
+    <string name="home_automation_sunrise">Sunrise</string>
+    <string name="home_automation_sunset">Sunset</string>
+    <string name="home_automation_temperature_title">Night Light strength</string>
+    <string name="home_automation_temperature_value">%1$d K</string>
+    <string name="home_automation_temperature_input">Kelvin</string>
+
+    <!-- Home Screen: Automation - Night Phases -->
+    <string name="home_automation_phases_section">Night phases</string>
+    <string name="home_automation_phases_expand">Expand night phases</string>
+    <string name="home_automation_phases_collapse">Collapse night phases</string>
+    <string name="home_automation_phase_base_title">Base phase</string>
+    <string name="home_automation_time_unavailable">--:--</string>
+
+    <string name="home_automation_phase_base_times_location">Sunset %1$s – Sunrise %2$s</string>
+    <string name="home_automation_phase_base_badge">per schedule</string>
+    <string name="home_automation_phase_boost_title">Boost</string>
+    <string name="home_automation_phase_boost_subtitle">Stronger light later at night</string>
+    <string name="home_automation_phase_boost_start">Boost start</string>
+    <string name="home_automation_phase_transition">Transition</string>
+    <string name="home_automation_phase_transition_instant">Instant</string>
+    <string name="home_automation_phase_transition_instant_desc">Jump straight to full strength</string>
+    <string name="home_automation_phase_transition_gradual">Gradual</string>
+    <string name="home_automation_phase_transition_gradual_desc">Linearly transitions from the base strength to the boost value throughout the night</string>
+    <string name="home_automation_phase_off_title">Force off</string>
+    <string name="home_automation_phase_off_subtitle">Always disables Night Light</string>
+    <string name="home_automation_phase_off_time">Time</string>
+    <string name="home_automation_phase_off_hint">From this time on, the filter stays off regardless of the schedule.</string>
+    <string name="home_automation_phase_legend_base">Base</string>
+    <string name="home_automation_phase_legend_boost">Boost</string>
+    <string name="home_automation_phase_legend_off">Off</string>
+    <string name="home_automation_phase_boost_summary_label">Boost</string>
+    <string name="home_automation_phase_off_summary_label">Force off</string>
+    <string name="home_automation_current_strength">Current strength: %1$d K</string>
+    <string name="home_automation_current_strength_off">Currently off</string>
+
+    <!-- Home Screen: Grant Permission Methods -->
+    <string name="home_permission_grant_panel_title">Grant the Permission</string>
+    <string name="home_permission_grant_panel_subtitle">Choose how to grant the WRITE_SECURE_SETTINGS permission</string>
+    <string name="home_permission_method_adb_title">ADB - Console</string>
+    <string name="home_permission_method_adb_desc">Connect your device to a computer, open the ADB console and paste this command:</string>
+    <string name="home_permission_adb_command" translatable="false">adb shell pm grant %1$s android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="home_permission_method_shizuku_title">Shizuku &amp; compatibles</string>
+    <string name="home_permission_method_shizuku_desc">Grant the permission through Shizuku or a compatible service (Stellar, Nightzuku, Shizuku+). You need one of them running. The app does not use the service afterwards.</string>
+    <string name="home_permission_method_root_title">Root</string>
+    <string name="home_permission_method_root_desc">Grant the permission using root access. The app will request superuser rights.</string>
+    <string name="home_permission_request_button">Request Permission</string>
+    <string name="home_permission_copy">Copy</string>
+    <string name="home_permission_copied">Command copied to clipboard</string>
+    <string name="home_permission_detected_harnesses">Detected: %1$s</string>
+    <string name="home_permission_shizuku_success">Permission granted via the service.</string>
+    <string name="home_permission_shizuku_cancelled">The service permission was not granted.</string>
+    <string name="home_permission_shizuku_not_installed">No compatible service found. Install Shizuku, Stellar, Nightzuku or Shizuku+.</string>
+    <string name="home_permission_shizuku_not_running">The service is not running. Start Shizuku, Stellar, Nightzuku or Shizuku+ first.</string>
+    <string name="home_permission_shizuku_unsupported">The service version is too old. Update the service.</string>
+    <string name="home_permission_shizuku_failed">Failed to grant the permission via the service.</string>
+    <string name="home_permission_root_detected">Root access detected</string>
+    <string name="home_permission_root_not_detected">Root access not detected</string>
+    <string name="home_permission_root_success">Permission granted via root access.</string>
+    <string name="home_permission_root_denied">Root permission was denied.</string>
+    <string name="home_permission_root_not_available">No root access found on this device.</string>
+    <string name="home_permission_root_failed">Failed to grant the permission via root.</string>
+
+    <!-- Home Screen: Night Light Info -->
+    <string name="home_night_light_available">Supported on device:</string>
+    <string name="home_night_light_status">Current status:</string>
+    <string name="home_night_light_value">Color Temperature / Intensity:</string>
+    <string name="home_night_light_schedule">Schedule mode:</string>
+
+    <string name="status_yes">Yes (Available)</string>
+    <string name="status_no">No (Unavailable)</string>
+    <string name="status_enabled">Enabled (ON)</string>
+    <string name="status_disabled">Disabled (OFF)</string>
+    <string name="status_unknown">Unknown / Not set</string>
+    <string name="status_not_active">N/A (Turn on to see active value)</string>
+    <string name="schedule_manual">Manual</string>
+    <string name="schedule_twilight">Sunset to Sunrise</string>
+    <string name="schedule_custom">Custom Schedule</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_section_customize">Customize</string>
+    <string name="settings_language_title">Language</string>
+    <string name="settings_language_auto">Automatic (System)</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_pl">Polski</string>
+
+    <string name="settings_theme_title">Theme</string>
+    <string name="settings_theme_system">System</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+
+    <string name="settings_material_you_title">Material You</string>
+    <string name="dialog_cancel">Cancel</string>
+
+    <!-- Automation foreground service -->
+    <string name="notification_channel_name">Night Light automation</string>
+    <string name="notification_title">Automatic Night Light active</string>
+    <string name="notification_text">Adjusting Night Light according to your schedule.</string>
+</resources>
