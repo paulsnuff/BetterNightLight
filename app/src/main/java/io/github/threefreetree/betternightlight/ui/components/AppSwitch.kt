@@ -86,7 +86,7 @@ fun AppSwitch(
         }
     }
 
-    val progress = animProgress.value
+    val progress = animProgress.value.coerceIn(0f, 1f)
     val currentThumbSize = lerp(uncheckedThumbSize, checkedThumbSize, progress)
     val minThumbCenter = trackPadding + checkedThumbSize / 2
     val maxThumbCenter = trackWidth - trackPadding - checkedThumbSize / 2
@@ -142,7 +142,7 @@ fun AppSwitch(
                     awaitEachGesture {
                         val down = awaitFirstDown(requireUnconsumed = false)
                         var dragging = false
-                        val initialProgress = animProgress.value
+                        val initialProgress = animProgress.value.coerceIn(0f, 1f)
 
                         while (true) {
                             val event = awaitPointerEvent()
