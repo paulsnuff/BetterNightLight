@@ -17,6 +17,8 @@
 > [!WARNING]
 > This app has only been tested on emulators and a Pixel 10 Pro. Use it at your own risk.
 
+## Screenshots
+
 <div align="center">
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="250" alt="Screenshot 1"/>&nbsp;&nbsp;&nbsp;
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="250" alt="Screenshot 2"/>&nbsp;&nbsp;&nbsp;
@@ -25,14 +27,14 @@
 
 ## Features
 
-- **Flexible scheduling** — manual start/end times or automatic sunrise & sunset based on your location (auto-detected or entered manually).
-- **Night phases** — go beyond a simple on/off schedule:
+- **Flexible scheduling** - manual start/end times or automatic sunrise & sunset based on your location (auto-detected or entered manually).
+- **Night phases** - go beyond a simple on/off schedule:
   - **Base** phase covering the main part of the night,
   - **Boost** phase with a stronger filter later at night,
   - **Force off** phase after which the filter stays off.
-- **Adjustable strength** — set the color temperature anywhere from 1000 K to 6500 K, for each phase separately.
-- **Smooth transitions** — apply changes instantly or ramp gradually across the night.
-- **Reliable automation** — a foreground service keeps the schedule up to date, backed by periodic work as a safety net. Everything restarts automatically after a reboot.
+- **Adjustable strength** - set the color temperature anywhere from 1000 K to 6500 K, for each phase separately.
+- **Smooth transitions** - apply changes instantly or ramp gradually across the night.
+- **Reliable automation** - a foreground service keeps the schedule up to date, backed by periodic work as a safety net. Everything restarts automatically after a reboot.
 
 ## Why?
 
@@ -42,7 +44,7 @@ Why use the native Night Light instead of overlay apps?
 
 - **True color transformation.** Native Night Light adjusts each pixel's R, G, and B values directly in the GPU rendering pipeline, *before* the image is displayed. Overlay apps simply draw a semi-transparent layer on top of the already-rendered image, which washes out contrast and mutes saturation.
 - **Zero performance cost.** The system-level approach adds no extra GPU or battery load, whereas an overlay layer must be rendered every single frame.
-- **Complete coverage.** Night Light applies its transform at the final display pipeline stage, so it uniformly covers every visible pixel — including privileged system UI like the notification shade and lock screen, above which overlay apps cannot render.
+- **Complete coverage.** Night Light applies its transform at the final display pipeline stage, so it uniformly covers every visible pixel - including privileged system UI like the notification shade and lock screen, above which overlay apps cannot render.
 
 ## License
 
