@@ -22,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.layout.LayoutCoordinates
@@ -46,6 +47,8 @@ internal fun KelvinSliderControl(
     onFieldCoordinatesChange: ((LayoutCoordinates?) -> Unit)? = null,
     leadingContent: @Composable (() -> Unit)? = null,
 ) {
+    val focusManager = LocalFocusManager.current
+
     var sliderValue by rememberSaveable(value) {
         mutableFloatStateOf(value.toFloat())
     }
@@ -100,7 +103,12 @@ internal fun KelvinSliderControl(
                         keyboardType = KeyboardType.Number,
                         imeAction = ImeAction.Done,
                     ),
-                keyboardActions = KeyboardActions(onDone = { commitText() }),
+                keyboardActions =
+                    KeyboardActions(
+                        onDone = {
+                            focusManager.clearFocus()
+                        },
+                    ),
                 modifier =
                     Modifier
                         .width(110.dp)
