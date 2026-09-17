@@ -1,5 +1,6 @@
 package io.github.threefreetree.betternightlight.ui.screens.settings
 
+import android.os.Build
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -127,48 +128,50 @@ fun SettingsScreen(
             onClick = { showThemeDialog = true },
         )
 
-        // 3. Material You toggle card tile
-        Card(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .clip(RoundedCornerShape(20.dp))
-                    .clickable { onDynamicColorChange(!uiState.dynamicColor) },
-            colors =
-                CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainer,
-                ),
-            border =
-                BorderStroke(
-                    width = 1.dp,
-                    color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
-                ),
-            shape = RoundedCornerShape(20.dp),
-        ) {
-            Row(
+        // 3. Material You toggle card tile (only on Android 12+, where dynamic color is supported)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            Card(
                 modifier =
                     Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 18.dp, vertical = 14.dp),
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
-                verticalAlignment = Alignment.CenterVertically,
+                        .clip(RoundedCornerShape(20.dp))
+                        .clickable { onDynamicColorChange(!uiState.dynamicColor) },
+                colors =
+                    CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainer,
+                    ),
+                border =
+                    BorderStroke(
+                        width = 1.dp,
+                        color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
+                    ),
+                shape = RoundedCornerShape(20.dp),
             ) {
-                IconBubble(
-                    icon = Icons.Rounded.AutoAwesome,
-                    size = 44.dp,
-                    iconSize = 24.dp,
-                )
-                Text(
-                    text = stringResource(R.string.settings_material_you_title),
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colorScheme.onSurface,
-                    modifier = Modifier.weight(1f),
-                )
-                AppSwitch(
-                    checked = uiState.dynamicColor,
-                    onCheckedChange = onDynamicColorChange,
-                )
+                Row(
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 18.dp, vertical = 14.dp),
+                    horizontalArrangement = Arrangement.spacedBy(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    IconBubble(
+                        icon = Icons.Rounded.AutoAwesome,
+                        size = 44.dp,
+                        iconSize = 24.dp,
+                    )
+                    Text(
+                        text = stringResource(R.string.settings_material_you_title),
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onSurface,
+                        modifier = Modifier.weight(1f),
+                    )
+                    AppSwitch(
+                        checked = uiState.dynamicColor,
+                        onCheckedChange = onDynamicColorChange,
+                    )
+                }
             }
         }
     }
