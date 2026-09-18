@@ -30,13 +30,13 @@ val devKeystoreExists: Provider<Boolean> =
         .map { it.trim() == "yes" }
 
 android {
-    namespace = "io.github.threefreetree.betternightlight"
+    namespace = "io.github.paulsnuff.betternightlight"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "io.github.threefreetree.betternightlight"
+        applicationId = "io.github.paulsnuff.betternightlight"
         minSdk = 29
         targetSdk = 37
         versionCode = appVersionCode

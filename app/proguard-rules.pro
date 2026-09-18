@@ -3,7 +3,7 @@
 
 # Shizuku loads ShizukuPermissionWorker by class name in a separate process,
 # and uses reflection to find its constructors. Keep the whole package.
--keep class io.github.threefreetree.betternightlight.shizuku.** { *; }
+-keep class io.github.paulsnuff.betternightlight.shizuku.** { *; }
 
 # commons-suncalc references FindBugs annotations that are only
 # compile-time (provided) dependencies; safe to ignore at runtime.
