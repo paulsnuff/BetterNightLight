@@ -8,7 +8,7 @@
 
     <!-- About Screen -->
     <string name="about_source_code">Source code on GitHub</string>
-    <string name="about_github_url" translatable="false">https://github.com/ThreeFreeTree/BetterNightLight</string>
+    <string name="about_github_url" translatable="false">https://github.com/paulsnuff/BetterNightLight</string>
     <string name="about_libraries">Open-source libraries</string>
     <string name="about_libraries_title">Libraries</string>
     <string name="about_close">Close</string>
