@@ -206,6 +206,13 @@ fun AboutScreenContent(
 private fun AboutHeader(modifier: Modifier = Modifier) {
     val uriHandler = LocalUriHandler.current
     val githubUrl = stringResource(R.string.about_github_url)
+    val context = LocalContext.current
+    val versionName =
+        remember {
+            runCatching {
+                context.packageManager.getPackageInfo(context.packageName, 0).versionName
+            }.getOrNull().orEmpty()
+        }
     var showLibraries by remember { mutableStateOf(false) }
 
     Column(
@@ -235,6 +242,15 @@ private fun AboutHeader(modifier: Modifier = Modifier) {
                         .fillMaxSize()
                         .scale(1.25f),
                 contentScale = ContentScale.Crop,
+            )
+        }
+
+        if (versionName.isNotBlank()) {
+            Text(
+                text = "v$versionName",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center,
             )
         }
 

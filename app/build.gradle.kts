@@ -5,19 +5,31 @@ plugins {
     alias(libs.plugins.hilt.android)
 }
 
-val appVersionName: String =
+// e.g. "v1.0.2-5-g0170a68", or empty when no tags exist
+val gitDescribe: String =
     providers
         .exec {
-            commandLine("sh", "-c", "git describe --tags --exact-match HEAD 2>/dev/null || true")
+            commandLine("sh", "-c", "git describe --tags --long HEAD 2>/dev/null || true")
         }.standardOutput.asText
         .get()
         .trim()
-        .removePrefix("v")
-        .takeIf { it.isNotEmpty() }
-        ?: "1.0.0"
+
+val latestTag: String = gitDescribe.substringBefore("-").removePrefix("v")
+val commitsSinceTag: Int =
+    gitDescribe
+        .substringAfter("-", "")
+        .substringBefore("-")
+        .toIntOrNull() ?: 0
+
+val appVersionName: String =
+    when {
+        latestTag.isEmpty() -> "1.0.0"
+        commitsSinceTag > 0 -> "$latestTag-dev"
+        else -> latestTag
+    }
 
 val appVersionCode: Int =
-    appVersionName.split(".").let { parts ->
+    appVersionName.substringBefore("-").split(".").let { parts ->
         fun part(i: Int) = parts.getOrElse(i) { "0" }.toIntOrNull() ?: 0
         part(0) * 1_000_000 + part(1) * 1_000 + part(2)
     }
