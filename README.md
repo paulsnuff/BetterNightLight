@@ -27,12 +27,14 @@
 
 ## Screenshots
 
-<div align="center">
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="250" alt="Screenshot 1"/>&nbsp;&nbsp;&nbsp;
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="250" alt="Screenshot 2"/>&nbsp;&nbsp;&nbsp;
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="250" alt="Screenshot 3"/>&nbsp;&nbsp;&nbsp;
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="250" alt="Screenshot 4"/>
-</div>
+<table align="center">
+  <tr>
+    <td width="25%"><img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="100%" alt="Screenshot 1"/></td>
+    <td width="25%"><img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="100%" alt="Screenshot 2"/></td>
+    <td width="25%"><img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="100%" alt="Screenshot 3"/></td>
+    <td width="25%"><img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="100%" alt="Screenshot 4"/></td>
+  </tr>
+</table>
 
 ## Features
 
