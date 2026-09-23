@@ -6,6 +6,14 @@
 
 </div>
 
+## Installation
+
+<div align="center">
+
+[<img src="docs/images/badge_obtainium.png" width="323" alt="Get it on Obtainium"/>](https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22io.github.paulsnuff.betternightlight%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fpaulsnuff%2FBetterNightLight%22%2C%22author%22%3A%22paulsnuff%22%2C%22name%22%3A%22Better%20Night%20Light%22%7D)
+
+</div>
+
 ## Requirements
 
 - **Android 10 (API 29) or higher**
