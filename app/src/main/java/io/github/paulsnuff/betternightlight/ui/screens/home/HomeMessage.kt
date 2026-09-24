@@ -55,3 +55,8 @@ sealed interface HomeMessage {
         override val textRes get() = R.string.home_automation_location_permission_denied
     }
 }
+
+data class HomeMessageEvent(
+    val id: Long,
+    val message: HomeMessage,
+)

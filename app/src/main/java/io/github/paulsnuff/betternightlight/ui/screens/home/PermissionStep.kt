@@ -3,7 +3,6 @@ package io.github.paulsnuff.betternightlight.ui.screens.home
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -57,6 +56,7 @@ fun PermissionStep(
     onNextStep: () -> Unit,
     onRequestShizukuPermission: () -> Unit,
     onRequestRootPermission: () -> Unit,
+    onShowMessage: (String) -> Unit = {},
 ) {
     if (hasSecureSettingsPermission) {
         CenteredCardWithNextButton(
@@ -88,6 +88,7 @@ fun PermissionStep(
                 compatibleHarnessLabels = compatibleHarnessLabels,
                 onRequestShizukuPermission = onRequestShizukuPermission,
                 onRequestRootPermission = onRequestRootPermission,
+                onShowMessage = onShowMessage,
             )
         }
     }
@@ -101,6 +102,7 @@ private fun PermissionGrantPanel(
     compatibleHarnessLabels: List<String>,
     onRequestShizukuPermission: () -> Unit,
     onRequestRootPermission: () -> Unit,
+    onShowMessage: (String) -> Unit = {},
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
@@ -153,7 +155,7 @@ private fun PermissionGrantPanel(
                 color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
             )
 
-            AdbMethodCard()
+            AdbMethodCard(onShowMessage = onShowMessage)
             MethodActionCard(
                 icon = Icons.Rounded.Security,
                 title = stringResource(R.string.home_permission_method_shizuku_title),
@@ -192,6 +194,7 @@ private fun PermissionGrantPanel(
 @Composable
 private fun AdbMethodCard(
     modifier: Modifier = Modifier,
+    onShowMessage: (String) -> Unit = {},
 ) {
     val context = LocalContext.current
     val command = stringResource(R.string.home_permission_adb_command, context.packageName)
@@ -261,7 +264,7 @@ private fun AdbMethodCard(
                         val clipboard =
                             context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                         clipboard.setPrimaryClip(ClipData.newPlainText(copyLabel, command))
-                        Toast.makeText(context, copiedMessage, Toast.LENGTH_SHORT).show()
+                        onShowMessage(copiedMessage)
                     },
                 ) {
                     Icon(

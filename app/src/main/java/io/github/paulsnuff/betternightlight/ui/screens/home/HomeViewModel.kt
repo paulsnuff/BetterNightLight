@@ -30,11 +30,13 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.time.Clock
 import java.time.LocalTime
+import java.util.concurrent.atomic.AtomicLong
 import javax.inject.Inject
 import kotlin.math.roundToInt
 import kotlin.time.Duration.Companion.seconds
@@ -70,6 +72,7 @@ class HomeViewModel
         private val _automationSchedule = MutableStateFlow(AutomationSchedule())
         private val _currentMinute = MutableStateFlow(currentMinuteOfDay())
         private val _messages = Channel<HomeMessage>(Channel.BUFFERED)
+        private val messageIdGenerator = AtomicLong(0L)
         private var locationFetchJob: Job? = null
 
         init {
@@ -297,7 +300,10 @@ class HomeViewModel
             }
         }
 
-        val messages: Flow<HomeMessage> = _messages.receiveAsFlow()
+        val messages: Flow<HomeMessageEvent> =
+            _messages.receiveAsFlow().map { message ->
+                HomeMessageEvent(id = messageIdGenerator.getAndIncrement(), message = message)
+            }
 
         fun refreshPermission() {
             permissionGate.updatePermissionState()

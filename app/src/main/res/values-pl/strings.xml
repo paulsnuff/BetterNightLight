@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Better Night Light</string>
+    <string name="common_close">Zamknij</string>
 
     <!-- Navigation Labels -->
     <string name="nav_home">Główna</string>
