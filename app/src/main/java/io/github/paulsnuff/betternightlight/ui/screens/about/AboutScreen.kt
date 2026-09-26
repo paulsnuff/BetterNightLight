@@ -249,6 +249,7 @@ private fun AboutHeader(modifier: Modifier = Modifier) {
             Text(
                 text = "v$versionName",
                 style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
             )
