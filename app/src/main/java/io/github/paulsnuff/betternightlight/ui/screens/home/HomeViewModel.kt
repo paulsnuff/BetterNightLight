@@ -175,28 +175,33 @@ class HomeViewModel
 
         private fun updateAutomationSchedule(
             transform: (AutomationSchedule) -> AutomationSchedule,
-        ) {
+        ): Job {
             // Single source of truth: only mutate the persisted schedule. The
             // automationScheduleFlow collector applies the strength and manages
             // work scheduling, so the write is applied exactly once.
             val updated = transform(_automationSchedule.value)
             _automationSchedule.value = updated
-            viewModelScope.launch {
+            return viewModelScope.launch {
                 userPreferencesRepository.updateAutomationSchedule(updated)
             }
         }
 
         fun setAutomationEnabled(enabled: Boolean) {
+            val writeJob = updateAutomationSchedule { it.copy(enabled = enabled) }
             if (!enabled) {
-                viewModelScope.launch {
-                    try {
-                        nightLightAutomationManager.restoreAndClearOverride()
-                    } catch (e: NightLightWriteException) {
-                        Log.w(TAG, "restoreAndClearOverride failed", e)
+                // Restore only after the disabled schedule is persisted; an
+                // in-flight automation tick could otherwise re-apply strength
+                // after the restore and leave Night Light forced on.
+                writeJob.invokeOnCompletion {
+                    viewModelScope.launch {
+                        try {
+                            nightLightAutomationManager.restoreAndClearOverride()
+                        } catch (e: NightLightWriteException) {
+                            Log.w(TAG, "restoreAndClearOverride failed", e)
+                        }
                     }
                 }
             }
-            updateAutomationSchedule { it.copy(enabled = enabled) }
         }
 
         fun setAutomationTrigger(trigger: AutomationTrigger) {
