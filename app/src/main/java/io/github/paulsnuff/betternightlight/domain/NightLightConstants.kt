@@ -2,7 +2,7 @@ package io.github.paulsnuff.betternightlight.domain
 
 import io.github.paulsnuff.betternightlight.domain.model.TimeOfDay
 
-const val TEMPERATURE_MIN_KELVIN = 1000
+const val TEMPERATURE_MIN_KELVIN = 1
 const val TEMPERATURE_MAX_KELVIN = 6500
 
 const val DEFAULT_TEMPERATURE_KELVIN = 3250

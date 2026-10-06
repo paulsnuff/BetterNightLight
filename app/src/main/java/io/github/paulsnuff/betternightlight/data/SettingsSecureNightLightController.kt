@@ -1,13 +1,16 @@
 package io.github.paulsnuff.betternightlight.data
 
 import android.content.Context
+import android.content.pm.PackageManager
 import android.provider.Settings
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.paulsnuff.betternightlight.domain.DispatcherProvider
 import io.github.paulsnuff.betternightlight.domain.NightLightController
 import io.github.paulsnuff.betternightlight.domain.TEMPERATURE_MAX_KELVIN
 import io.github.paulsnuff.betternightlight.domain.TEMPERATURE_MIN_KELVIN
+import io.github.paulsnuff.betternightlight.shizuku.ColorDisplayBinder
 import kotlinx.coroutines.withContext
+import rikka.shizuku.Shizuku
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -24,10 +27,14 @@ class SettingsSecureNightLightController
         override suspend fun setActivated(activated: Boolean): Boolean = writeSetting("night_display_activated", if (activated) 1 else 0)
 
         override suspend fun setColorTemperature(kelvin: Int): Boolean =
-            writeSetting(
-                "night_display_color_temperature",
-                kelvin.coerceIn(TEMPERATURE_MIN_KELVIN, TEMPERATURE_MAX_KELVIN),
-            )
+            withContext(dispatchers.io) {
+                val shizukuReady = runCatching {
+                    Shizuku.pingBinder() && Shizuku.checkSelfPermission() == PackageManager.PERMISSION_GRANTED
+                }.getOrDefault(false)
+                shizukuReady && ColorDisplayBinder.setKelvin(
+                    kelvin.coerceIn(TEMPERATURE_MIN_KELVIN, TEMPERATURE_MAX_KELVIN),
+                )
+            }
 
         override suspend fun setAutoMode(mode: Int): Boolean = writeSetting("night_display_auto_mode", mode)
 

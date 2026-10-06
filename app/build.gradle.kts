@@ -102,6 +102,10 @@ android {
             enableSplit = false
         }
     }
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
 }
 
 abstract class GenerateLibrariesResourceTask : DefaultTask() {
@@ -185,6 +189,7 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(libs.shizuku.api)
     implementation(libs.shizuku.provider)
+    implementation(libs.hiddenapibypass)
     implementation(libs.libsu.core)
     implementation(libs.commons.suncalc)
     implementation(libs.androidx.work.runtime)
